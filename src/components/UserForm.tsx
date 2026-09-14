@@ -34,25 +34,40 @@ const UserForm = () => {
     });
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">
-            名前
-            <input id="name" type="text" value={state.name} onChange={handleName} />
-          </label>
+    <form onSubmit={handleSubmit}>
+      <div className="mt-10 flex flex-col gap-10 bg-blue-800 text-white font-bold text-left px-10 py-5 rounded">
+        <label htmlFor="name">
+          名前
+          <input
+            id="name"
+            type="text"
+            value={state.name}
+            onChange={handleName}
+            className="border ml-10 rounded bg-gray-800"
+          />
+        </label>
 
-          {state.errors.name && <p>{state.errors.name}</p>}
+        {state.errors.name && <p className="text-red-400">{state.errors.name}</p>}
 
-          <label htmlFor="email">
-            メールアドレス:
-            <input id="email" type="email" value={state.email} onChange={handleEmail} />
-          </label>
-          {state.errors.email && <p>{state.errors.email}</p>}
-          <button type="submit">送信</button>
-        </div>
-      </form>
-    </div>
+        <label htmlFor="email">
+          メールアドレス:
+          <input
+            id="email"
+            type="email"
+            value={state.email}
+            onChange={handleEmail}
+            className="border ml-10 rounded bg-gray-800"
+          />
+        </label>
+        {state.errors.email && <p className="text-red-400">{state.errors.email}</p>}
+        <button
+          type="submit"
+          className="bg-gray-500 py-2 w-1/2 mx-auto rounded-lg cursor-pointer hover:opacity-80"
+        >
+          送信
+        </button>
+      </div>
+    </form>
   );
 };
 

@@ -11,11 +11,16 @@ const useValidateForm = () => {
       errors.name = "名前を入力してください";
     }
 
-    if (!state.mailAddres.trim()) {
+    if (!state.email.trim()) {
       errors.email = "メールアドレスを入力してください";
-    } else if (!state.mailAddres.includes("@")) {
+    } else if (!state.email.includes("@")) {
       errors.email = "@が含まれていません。";
     }
+
+    dispatch({
+      type: "SET_ERROR",
+      payload: errors,
+    });
 
     return errors;
   };

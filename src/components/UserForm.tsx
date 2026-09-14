@@ -35,7 +35,7 @@ const UserForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mt-10 flex flex-col gap-10 bg-blue-800 text-white font-bold text-left px-10 py-5 rounded">
+      <div className="mt-10 flex flex-col gap-10 bg-blue-900 text-white font-bold text-left px-10 py-5 rounded">
         <label htmlFor="name">
           名前
           <input
